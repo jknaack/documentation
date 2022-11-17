@@ -1,0 +1,8 @@
+<p>Like any other integration this logs to the <code>home-assistant.log</code> file.</p>
+<p>To enable <code>debug</code> logging, add this to your <code>configuration.yaml</code>:</p>
+<pre><code class="language-yaml">logger:
+  default: info
+  logs:
+    custom_components.hacs: debug
+    aiogithubapi: debug
+</code></pre>

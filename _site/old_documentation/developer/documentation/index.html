@@ -1,0 +1,55 @@
+<p>The documentation site for HACS is build with <a href="https://docusaurus.io">Docusaurus</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a></p>
+<h2>Contribute to the documentation</h2>
+<p>There are two ways of contributing to the documentation:</p>
+<ul>
+<li>Using the &quot;Edit this page&quot; link at the bottom of every page.</li>
+<li>Locally changing (devcontainer)</li>
+</ul>
+<p><em>All changes to the documentation should go against the <code>master</code> branch.</em><br>
+The repository for the documentation is hosted @ https://github.com/hacs/documentation</p>
+<h3>Edit this page</h3>
+<p>When you see something that needs changing when you browse the documentation, scroll down to the bottom of the page you are looking at, and click the &quot;Edit this page&quot; link.</p>
+<p><img src="/img/edit_this.png" alt="edit"></p>
+<p>This will take you to the GitHub page for it so you can change the content.</p>
+<h3>Locally changing (devcontainer)</h3>
+<p>First spin up the <a href="/docs/developer/devcontainer">devcontainer</a></p>
+<p>When you have that running issue the following commands:</p>
+<pre><code class="language-bash">yarn start
+</code></pre>
+<p>You have now started a local webserver that hosts the documentation on http://localhost:3000</p>
+<p>That server will reload if you do changes to the documentation so you can live see how the changes look.</p>
+<p>When you are happy with the result, push the changes to your fork and create a PR to have it merged to the HACS base.</p>
+<h2>Contents</h2>
+<p>All pages for the HACS documentation is located under:</p>
+<pre><code class="language-text">documentation/content/
+</code></pre>
+<p>All images for the HACS documentation is located under:</p>
+<pre><code class="language-text">documentation/static/img/
+</code></pre>
+<h2>Contents linking</h2>
+<h3>Reference another page</h3>
+<p>Lets say you need to reference another page that is located under:</p>
+<pre><code class="language-text">documentation/content/developer/features.md
+</code></pre>
+<p>Then you need to use:</p>
+<pre><code class="language-md">[Features](/docs/developer/features)
+</code></pre>
+<h3>Reference images</h3>
+<p>Lets say you need to reference an image that is located under:</p>
+<pre><code class="language-text">documentation/static/img/features.png
+</code></pre>
+<p>Then you need to use:</p>
+<pre><code class="language-md">![image](/img/features.png)
+</code></pre>
+<h2>New pages</h2>
+<ol>
+<li>Create a new <code>.md</code> file under <code>documentation/content/</code> in a sub-directory that fits the purpose of the file.</li>
+<li>Add a reference to that file in <code>documentation/sidebars.js</code></li>
+</ol>
+<p>At the top of all pages you should have this:</p>
+<pre><code class="language-text">---
+id: An ID for that file, ie. 'feature' (lowercase)
+title: A Title for the page, this will also be used in the sidebar, ie. Feature
+description: &quot;A nice description here&quot;
+---
+</code></pre>

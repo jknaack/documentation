@@ -1,0 +1,40 @@
+<p>This page should contain:</p>
+<ul>
+<li>information about CI/bots/services.</li>
+<li>How releases are handled.</li>
+<li>How versions is handled.</li>
+</ul>
+<h2>Critical repositories</h2>
+<p>This applies to repositories that fall into these categories:</p>
+<ul>
+<li>It's designed to steal your data (authentication tokens and similar).</li>
+<li>It's designed to harm your system and/or network.</li>
+</ul>
+<p>HACS is prepared to handle those, and this is the flow of it:</p>
+<ol>
+<li>The repository is marked as dangerous/have security issues, by someone opening an issue in https://github.com/hacs/default repository using the &quot;Flag&quot; issue template.</li>
+<li>The issue is reviewed, if the repository is considered to be of a critical character:
+<ol>
+<li>A PR is opened to add the repository to https://github.com/hacs/default/blob/master/critical</li>
+<li>That PR will have a description of why, and extra steps you need to take.</li>
+<li>When it's merged, HACS will know about it during the next scan (30min or Home Assistant restart.)</li>
+</ol>
+</li>
+<li>HACS receives an updated <a href="https://github.com/hacs/default/blob/master/critical">critical file</a>.</li>
+</ol>
+<h3>If the repository is download with HACS</h3>
+<ol>
+<li>The repository files is removed.</li>
+<li>The repository is removed from HACS.</li>
+<li>Home Assistant is restarted to make sure it's not loaded anymore.</li>
+<li>When Home Assistant starts up, you will have a <code>critical</code> log entry, and a persistent notification telling you to open the HACS panel.</li>
+<li>When you open the HACS UI, you will see this card:</li>
+</ol>
+<p><img src="/img/critical.png" alt="critical"></p>
+<p>If you click the &quot;More info about this incident&quot; button you will be taken to the PR that added that to the <a href="https://github.com/hacs/default/blob/master/critical">critical file</a>.</p>
+<p>If you click the &quot;Acknowledge&quot; button, you will not see that message anymore.</p>
+<h3>If the repository is not download with HACS</h3>
+<ol>
+<li>The repository is removed from HACS.</li>
+</ol>
+<p><em>That's it, since it was not download, no further action from HACS is necessary</em></p>

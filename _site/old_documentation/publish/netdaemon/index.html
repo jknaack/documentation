@@ -1,0 +1,31 @@
+<p>A template to use as a reference is <a href="https://github.com/net-daemon/netdaemon-app-template">netdaemon-app-template</a></p>
+<h2>Requirements</h2>
+<p>For a NetDaemon app repository to be valid these are the requirements:</p>
+<h3>Repository structure</h3>
+<ul>
+<li>There is only one app (one directory under <code>ROOT_OF_THE_REPO/apps/</code>) pr. repository (if you have more, only the first one will be managed.)</li>
+<li>The app (all the cs/yaml files for it) are located under <code>ROOT_OF_THE_REPO/apps/APP_NAME/</code></li>
+<li>The app and all the cs/yaml files for it are located under <code>ROOT_OF_THE_REPO/apps/APP_NAME/</code></li>
+</ul>
+<h4>OK example:</h4>
+<pre><code class="language-text">apps/awesome/awesome.cs
+info.md
+README.md
+</code></pre>
+<h4>Not OK example (1):</h4>
+<pre><code class="language-text">awesome/awesome.cs
+info.md
+README.md
+</code></pre>
+<h4>Not OK example (2):</h4>
+<pre><code class="language-text">awesome.cs
+info.md
+README.md
+</code></pre>
+<h3>GitHub releases (optional)</h3>
+<h4>If there are releases</h4>
+<p>When downloading/upgrading it will scan the content in the latest release.</p>
+<p>If there are multiple releases in the repository the user have some options to download a specific version.
+The choices will be the last 5 releases and the default branch.</p>
+<h4>If there are no releases</h4>
+<p>It will scan files in the branch marked as default.</p>

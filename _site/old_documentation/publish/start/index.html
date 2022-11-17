@@ -1,0 +1,143 @@
+<p>For your repository to be added there are several criteria that need to be met.</p>
+<ul>
+<li><a href="#general-requirements">General requirements</a></li>
+<li><a href="integration">Integration requirements</a> for integrations.</li>
+<li><a href="plugin">Plugin requirements</a> for plugins.</li>
+<li><a href="appdaemon">AppDaemon requirements</a> for AppDaemon apps.</li>
+<li><a href="python_script">Python_scripts requirements</a> for python scripts.</li>
+<li><a href="theme">Theme requirements</a> for themes.</li>
+</ul>
+<h2>General requirements</h2>
+<p>Only public repositories on GitHub will work with HACS.</p>
+<h3>Description</h3>
+<p>Your repository on GitHub needs to have a description that in a few words describes the purpose of the repository. <em>This description is used in HACS.</em></p>
+<h3>Topics</h3>
+<p>Your repository on GitHub needs to have <a href="https://docs.github.com/en/github/administering-a-repository/classifying-your-repository-with-topics">topics</a>. <em>Topics are not displayed in HACS, but they can be used for searchability in the HACS store.</em></p>
+<h3>README</h3>
+<p>Your repository needs to have a <a href="https://github.com/matiassingers/awesome-readme">readme</a> with information about how to use it. <em>This is not used in HACS, unless you have defined the key <code>render_readme</code> in <code>hacs.json</code> below.</em></p>
+<h3>info.md</h3>
+<p>If you want to add a richer experience for your users you can add an <code>info.md</code> file to the root of your repository, this file will be rendered under the repository description. It does not support the full styling options from GitHub, so use with care. <em>This is optional, if you do not have this file you need to set the key <a href="#hacsjson"><code>render_readme</code></a> in the <code>hacs.json</code> file to <code>true</code>.</em></p>
+<p><a href="#templates">See the Templates section on how you can make this awesome</a></p>
+<h3>hacs.json</h3>
+<p>This is a special manifest file that both defines the information that HACS shows in the UI and what files/paths that HACS should use. <em>This file must be located in the root of your repository.</em></p>
+<p>The following keys are supported:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">Yes</td>
+<td>The display name that will be used in the HACS UI.</td>
+</tr>
+<tr>
+<td><code>content_in_root</code></td>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">No</td>
+<td>Indicates whether the content is in the root of the repository as opposed to in a subdirectory.</td>
+</tr>
+<tr>
+<td><code>zip_release</code></td>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">No</td>
+<td>Indicates whether the content is in a zipped archive when releases are published on GitHub. If you use this you also need to add <code>filename</code>. <strong>This is only supported for integrations.</strong></td>
+</tr>
+<tr>
+<td><code>filename</code></td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">No</td>
+<td>Name of the file HACS should look for, only applies to single item categories (plugin, theme, python_scripts, zip_release).</td>
+</tr>
+<tr>
+<td><code>render_readme</code></td>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">No</td>
+<td>Tells HACS to render the README.md file instead of info.md.</td>
+</tr>
+<tr>
+<td><code>hide_default_branch</code></td>
+<td style="text-align:center">bool</td>
+<td style="text-align:center">No</td>
+<td>Tells HACS to not offer downloading the default branch.</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">No</td>
+<td>Two character country code in ISO 3166-1 alpha-2 format. <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2 on Wikipedia</a></td>
+</tr>
+<tr>
+<td><code>homeassistant</code></td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">No</td>
+<td>The minimum required Home Assistant version.</td>
+</tr>
+<tr>
+<td><code>hacs</code></td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">No</td>
+<td>The minimum required HACS version.</td>
+</tr>
+<tr>
+<td><code>persistent_directory</code></td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">No</td>
+<td>A relative path (within the integration directory) that will be kept safe during upgrades. <em>Can only be used with integrations.</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>examples:</strong></p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;My awesome thing&quot;,
+  &quot;content_in_root&quot;: true,
+  &quot;filename&quot;: &quot;my_super_awesome_thing.js&quot;,
+  &quot;country&quot;: [&quot;NO&quot;, &quot;SE&quot;, &quot;DK&quot;]
+}
+</code></pre>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;My awesome thing&quot;,
+  &quot;country&quot;: &quot;NO&quot;,
+  &quot;homeassistant&quot;: &quot;0.99.9&quot;,
+  &quot;persistent_directory&quot;: &quot;userfiles&quot;,
+}
+</code></pre>
+<p>Allow Home Assistant beta versions by appending <code>b0</code>. Without <code>b0</code>, only official releases will be allowed.</p>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;My awesome thing&quot;,
+  &quot;country&quot;: &quot;NO&quot;,
+  &quot;homeassistant&quot;: &quot;2021.12.0b0&quot;,
+  &quot;persistent_directory&quot;: &quot;userfiles&quot;,
+}
+</code></pre>
+<h3>Versions</h3>
+<p>If the repository uses GitHub releases, the tagname from the latest release is used to set the remote version. <em>Just publishing tags is not enough, you need to publish releases.</em></p>
+<p>If the repository does not use tags, the 7 first characters of the last commit will be used.</p>
+<h2>Want to add your repository to the store as a default?</h2>
+<p><a href="/docs/publish/include">See here for how to add a custom repository.</a></p>
+<h2>Badges</h2>
+<p>Tell your users that your repository can be tracked with HACS.</p>
+<h3>Default repository</h3>
+<p><em>If your repository is in the default store.</em></p>
+<p><a href="https://github.com/hacs/integration"><img src="https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=for-the-badge" alt="hacs_badge"></a></p>
+<pre><code>[![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg?style=for-the-badge)](https://github.com/hacs/integration)
+</code></pre>
+<hr>
+<p><a href="https://github.com/hacs/integration"><img src="https://img.shields.io/badge/HACS-Default-41BDF5.svg" alt="hacs_badge"></a></p>
+<pre><code>[![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/integration)
+</code></pre>
+<h3>Custom repository</h3>
+<p><em>If your repository can be added as a custom repository.</em></p>
+<p><a href="https://github.com/hacs/integration"><img src="https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge" alt="hacs_badge"></a></p>
+<pre><code>[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg?style=for-the-badge)](https://github.com/hacs/integration)
+</code></pre>
+<hr>
+<p><a href="https://github.com/hacs/integration"><img src="https://img.shields.io/badge/HACS-Custom-41BDF5.svg" alt="hacs_badge"></a></p>
+<pre><code>[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)
+</code></pre>

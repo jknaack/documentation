@@ -1,0 +1,3 @@
+<p>HACS uses the <a href="https://docs.github.com/en/rest">GitHub API</a> to gather information about all <a href="https://github.com/hacs/default">available</a> and downloaded repositories. <a href="https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limiting">This API is rate limited</a> to 60 requsets every hour for unauthenticated requests, which is not enough. So HACS needs to make authenticated requests to that API.</p>
+<p>A OAuth token with no scopes which grants read-only access to public information (including user profile info, repository info, and gists), will be used.</p>
+<p><a href="https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps">You can read more about OAuth scopes here</a>.</p>

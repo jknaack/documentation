@@ -1,0 +1,13 @@
+<p>Themes is a part of the Home Assistant <a href="https://www.home-assistant.io/integrations/frontend/"><code>frontend</code> integration.</a></p>
+<p>:::info
+Themes in HACS will automagically be enabled if you have it enabled in Home Assistant
+:::</p>
+<h2>Enable themes in Home Assistant</h2>
+<p>Add this to your <code>configuration.yaml</code></p>
+<pre><code class="language-yaml">frontend:
+  themes: !include_dir_merge_named themes
+</code></pre>
+<h2>Themes download location</h2>
+<p>:::info
+Any theme downloaded with HACS is stored in <code>themes/</code> in your Home Assistant configuration directory.
+:::</p>

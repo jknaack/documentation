@@ -1,0 +1,31 @@
+<p>A good template to use as a reference is <a href="https://github.com/custom-cards/boilerplate-card">boilerplate-card</a></p>
+<h2>Requirements</h2>
+<p>For a plugin repository to be valid these are the requirements:</p>
+<h3>Repository structure</h3>
+<ul>
+<li>There are <code>.js</code> files under <code>ROOT_OF_THE_REPO/dist/</code> or directly in the root of the repository.</li>
+<li>One of the <code>.js</code> files have the same name as the repository.
+<ul>
+<li>With every rule there is an exception, if the repository's name starts with <code>&quot;lovelace-&quot;</code>, there can be a <code>.js</code> file in the repository matching the repository name with <code>&quot;lovelace-&quot;</code> striped from the name, example:</li>
+</ul>
+</li>
+</ul>
+<h4>Example</h4>
+<pre><code class="language-yml">Repository name: &quot;lovelace-awesome-card&quot;
+File name of one of the files: &quot;awesome-card.js&quot;
+</code></pre>
+<p>When searching for accepted files HACS will look in this order:</p>
+<ul>
+<li>The <code>dist</code>directory.</li>
+<li>On the latest release.</li>
+<li>The root of the repository.</li>
+</ul>
+<p>All <code>.js</code> files it finds in the first location it finds one that matches the name will be downloaded.</p>
+<p>If your plugin require files that are not <code>js</code> files, place all files (including the card file) in the <code>dist</code> directory.</p>
+<h3>GitHub releases (optional)</h3>
+<h4>If there are releases</h4>
+<p>When downloading/upgrading it will scan the content in the latest release.</p>
+<p>If there are multiple releases in the repository the user have some options to download a specific version.
+The choices will be the last 5 releases and the default branch.</p>
+<h4>If there are no releases</h4>
+<p>It will scan files in the branch marked as default.</p>

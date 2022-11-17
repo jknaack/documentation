@@ -1,0 +1,26 @@
+<p>A template to use as a reference is <a href="https://github.com/ludeeus/ps-hacs">ps-hacs</a></p>
+<p>This is for the <a href="https://www.home-assistant.io/components/python_script/"><code>python_script</code> integration in Home Assistant</a></p>
+<h2>Requirements</h2>
+<p>For a python_script repository to be valid these are the requirements:</p>
+<h3>Repository structure</h3>
+<ul>
+<li>The python script are located here <code>ROOT_OF_THE_REPO/python_scripts/SCRIPT_NAME.py</code></li>
+<li>There is only one python file (one directory under <code>ROOT_OF_THE_REPO/python_scripts/</code>) per repository (if you have more, only the first one will be managed.)</li>
+</ul>
+<h4>OK example:</h4>
+<pre><code class="language-text">python_scripts/awesome.py
+info.md
+README.md
+</code></pre>
+<h4>Not OK example:</h4>
+<pre><code class="language-text">awesome.py
+info.md
+README.md
+</code></pre>
+<h3>GitHub releases (optional)</h3>
+<h4>If there are releases</h4>
+<p>When downloading/upgrading it will scan the content in the latest release.</p>
+<p>If there are multiple releases in the repository the user have some options to download a specific version.
+The choices will be the last 5 releases and the default branch.</p>
+<h4>If there are no releases</h4>
+<p>It will scan files in the branch marked as default.</p>

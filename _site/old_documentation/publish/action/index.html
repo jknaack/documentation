@@ -1,0 +1,44 @@
+<p>You can use GitHub actions to validate your repository with HACS.
+This will make sure that your repository can be validated in HACS after changes to your repository or HACS itself.</p>
+<p>This action uses the exact same code as HACS to validate a repository.</p>
+<p>The action have 3 run types:</p>
+<ul>
+<li>For the <a href="https://github.com/hacs/default">hacs/default repo</a> it is used to validate new default repositories.
+<ul>
+<li>If you use releases the latest release will be checked, if not the default branch will be checked.</li>
+</ul>
+</li>
+<li>If you have it set up for PR's in your repository, it will run against the fork/branch that made the PR.</li>
+<li>If you have it set up for pushes, if will run against the branch you push to.</li>
+</ul>
+<p>The action itself lives <a href="https://github.com/hacs/action">here</a> and you are free to inspect the code and/or make a PR to add changes.</p>
+<p>To use it, follow these steps:</p>
+<ol>
+<li>Go to your repository on GitHub</li>
+<li>Click on &quot;Create new file&quot;</li>
+<li>For filename, paste .github/workflows/validate.yaml</li>
+<li>Paste the following contents:</li>
+<li>Change the value of &quot;CATEGORY&quot; key, this needs to be one of: &quot;appdaemon&quot;, &quot;integration&quot;, &quot;netdaemon&quot;, &quot;plugin&quot;, &quot;python_script&quot;, &quot;theme&quot;</li>
+</ol>
+<pre><code class="language-yaml">name: Validate
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: &quot;0 0 * * *&quot;
+
+jobs:
+  validate:
+    runs-on: &quot;ubuntu-latest&quot;
+    steps:
+      - uses: &quot;actions/checkout@v2&quot;
+      - name: HACS validation
+        uses: &quot;hacs/action@main&quot;
+        with:
+          category: &quot;CHANGE_ME!&quot;
+</code></pre>
+<p>This will run on every PR and push, and at midnight every day.</p>
+<p>:::tip
+If you maintain an integration, you can also validate your integration with <a href="https://developers.home-assistant.io/blog/2020/04/16/hassfest">hassfest</a>.
+:::</p>

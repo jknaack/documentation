@@ -1,0 +1,58 @@
+<p>As a developer you can now add your repository to be included in as a default repository in the store.</p>
+<p>Only the owner of the repository or a major contributor to it can submit a PR to have it included as a default.</p>
+<p>Custom integrations that exist to alpha/beta test core integrations will not be accepted, you can still use it as a <a href="/docs/faq/custom_repositories">custom repository</a></p>
+<p>Custom integrations that override core integrations will not be accepted, you can still use it as a <a href="/docs/faq/custom_repositories">custom repository</a></p>
+<h2>Before submitting</h2>
+<p>Add both these actions to your own repository and make sure they pass:</p>
+<ul>
+<li>https://github.com/home-assistant/actions#hassfest</li>
+<li>https://github.com/hacs/action</li>
+</ul>
+<p>When all of this is covered, you can add it to repository category files in https://github.com/hacs/default</p>
+<p>:::caution
+<em>NB!: The list is case sensitive.</em>
+:::</p>
+<p>When a PR for this is merged, it will show up in HACS after the first scheduled scan.</p>
+<h2>CI Checks</h2>
+<p>When submitting a repository for the default repository a suite of CI checks will be run to ensure that the repository follows the requirements.
+All checks needs to pass for the repository to be included (unless something else are agreed on).</p>
+<h3>Re run checks</h3>
+<p>If you need to rerun the checks add a comment with this as the content:</p>
+<pre><code class="language-txt">/recheck
+</code></pre>
+<h3>Check Brands</h3>
+<p><em>Only applies to integrations.</em></p>
+<p>This checks that the repository are added to https://github.com/home-assistant/brands</p>
+<h3>Check Manifest</h3>
+<p><em>Only applies to integrations.</em></p>
+<p><a href="integration.md#manifestjson">See Integration</a></p>
+<p>For more information about the integration manifest see here https://developers.home-assistant.io/docs/creating_integration_manifest</p>
+<h3>Check HACS</h3>
+<p>This runs the same validation that HACS itself uses.</p>
+<h3>Check HACS Manifest</h3>
+<p>This checks that the hacs.json file at least contains the following:</p>
+<ul>
+<li><code>name</code></li>
+</ul>
+<p>https://hacs.xyz/docs/publish/start#hacsjson</p>
+<h3>Check Info</h3>
+<p>This checks that there is an info.md (or readme.md if configured) file with content in the repository.</p>
+<h3>Check Archived</h3>
+<p>This checks if the repository is archived.</p>
+<h3>Check Owner</h3>
+<p><em>This check can fail.</em></p>
+<p>This checks if the submitter is the owner of repository, this can fail if the repository belong to an org. or that the submitter is a major contributor to the repository.</p>
+<h3>Check Images</h3>
+<p><em>Only applies to plugins and themes.</em></p>
+<p>This checks that there are images in the defined information file that HACS render.</p>
+<h3>Check Repository</h3>
+<p>This checks general things about the repository like:</p>
+<ul>
+<li>It has a description</li>
+<li>Issues are enabled</li>
+<li>It has topics defined</li>
+</ul>
+<h3>Lint [jq]</h3>
+<p>This make sure that the files still are valid JSON.</p>
+<h3>Lint [sorted]</h3>
+<p>This make sure that the files still are sorted correctly.</p>

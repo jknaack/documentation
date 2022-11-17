@@ -1,0 +1,74 @@
+<p><strong><a href="https://github.com/hacs/integration/issues">First lets start out by stating that <em>ALL</em> issues should be reported here</a></strong></p>
+<h1>What should be in the issue?</h1>
+<p>When you create an issue in the repository for HACS, you start by selecting a template.</p>
+<p>All templates have a defined structure and it is <strong>expected</strong> that you follow it.</p>
+<p><em>Issues that are missing required information can (will) be closed.</em></p>
+<h2>Flag</h2>
+<p>This should <strong>only</strong> be used, when there is grounds for removing (blacklisting) a repository in HACS.</p>
+<p>When you are flagging a repository you need to supply at least these:</p>
+<ul>
+<li>A good description for why.</li>
+<li>The name of the repository.</li>
+<li>Proof that you have tried to contact the owner of that repository (link to issue)</li>
+</ul>
+<p><em>If you are flagging it because you don't like it, have issues with it, or it's not working, you should report that to the repository and not here.</em></p>
+<h2>Issues</h2>
+<p>You use this when you have issues with HACS.</p>
+<p><a href="https://hacs.xyz/docs/basic/logs">To enable debug logs for HACS (required when adding an issue) have a look here</a>.</p>
+<p>Logs are <strong>more</strong> then <em>just</em> errors, with debug logging it gives the person investigating the issue a full picture of what happened.</p>
+<p><strong>What an issue should contain depends on the type, but at least:</strong></p>
+<ul>
+<li>A GOOD description of the issue.</li>
+<li>Debug logs.</li>
+<li>Steps to reproduce the issue.</li>
+<li>If the issue is in the UI, add screenshots.</li>
+<li><a href="/docs/basic/diagnostics">Diagnostics</a></li>
+</ul>
+<p>You can see examples of good/bad issues further down on this page.</p>
+<p>:::warning
+<em>Issues that are missing required information can (will) be closed.</em>
+:::</p>
+<p>:::tip
+oh... and almost forgot... <code>latest</code> is <strong>NOT</strong> a version.
+:::</p>
+<h1>Examples</h1>
+<p>This is a collection of good/bad issues.</p>
+<h2>Examples of bad issues</h2>
+<pre><code class="language-text">
+</code></pre>
+<p><em>Yes the issue was blank it only had a header 'CCH Settings'</em></p>
+<hr>
+<pre><code class="language-text">Version of HACS
+Describe the bug
+A clear and concise description of what the bug is.
+
+Debug log
+
+Add your logs here.
+</code></pre>
+<p><em>The description of the issue only contained the template but it had a header 'Blows up on update.'</em></p>
+<hr>
+<pre><code class="language-text">Version of HACS
+Describe the bug
+A clear and concise description of what the bug is.
+
+Debug log
+
+Add your logs here.
+</code></pre>
+<p><em>The description of the issue only contained the template but it had a header 'zod'</em></p>
+<hr>
+<pre><code class="language-text">[Expecting value: line 1 column 1 (char 0)] Restore Failed!
+11:51 AM custom_components/hacs/hacsbase/data.py (CRITICAL)
+I checked and it exactly how its supposed to be
+even replaced the whole hacs folder with a fresh download
+</code></pre>
+<h2>Examples of good issues</h2>
+<p><em>Good issues have too much text to extract it (some also have screenshots) but here is a few links:</em></p>
+<ul>
+<li><a href="https://github.com/custom-components/hacs/issues/452">https://github.com/custom-components/hacs/issues/452</a></li>
+<li><a href="https://github.com/custom-components/hacs/issues/470">https://github.com/custom-components/hacs/issues/470</a></li>
+<li><a href="https://github.com/custom-components/hacs/issues/356">https://github.com/custom-components/hacs/issues/356</a></li>
+</ul>
+<h1>Last words</h1>
+<p>The more time/words/examples you put in your issue, the faster someone can see/understand what you mean.</p>

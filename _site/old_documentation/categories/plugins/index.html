@@ -1,0 +1,23 @@
+<p>The <a href="https://www.home-assistant.io/lovelace/">Lovelace UI</a> is a customizable interface. With additional community plugins you can extend the default experience.</p>
+<h2>Lovelace Plugin download location</h2>
+<p>:::info
+Any Lovelace Plugin you download with HACS is stored in <code>www/community/</code> in your Home Assistant configuration directory.
+:::</p>
+<h2>Special notes about downloaded Lovelace Plugins</h2>
+<p>When a <code>.js</code> file is downloaded, a compressed <code>.gz</code> version of it will be created. This file (assuming it exists) will be served to the requester to save transfer size/time.</p>
+<p>If you make local changes to a plugin in the <code>.js</code> file, delete the <code>.gz</code> variant to have HACS serve up that one.</p>
+<p>At the bottom of every page for plugins it will state how you should add it to your Lovelace configuration.</p>
+<h3>Custom view (/hacsfiles)</h3>
+<p>HACS has a custom view/path/endpoint for serving up Lovelace elements (plugins) <code>/hacsfiles/</code>, this works mostly the same way as <code>/local</code> but has some extra features.</p>
+<ul>
+<li>The <code>/hacsfiles</code> endpoint does not cache anything; it will instruct your browser to fetch a new version on each load.</li>
+<li>The <code>/hacsfiles</code> endpoint will try to serve a .gz variant of the element, this will make the element smaller and the transfer will be faster.</li>
+</ul>
+<p>Examples:</p>
+<p>Your plugin exists in <code>www/community/plugin/plugin.js</code> you can use both <code>/local/community/plugin/plugin.js</code> and <code>/hacsfiles/plugin/plugin.js</code> to reference it, but only the <code>hacsfiles</code> version will have the extra features that HACS offers.</p>
+<p><code>.gz</code> example: CCH (Compact Custom Header) is a fairly popular element for Lovelace. When you use <code>/local</code> you will transfer the <code>.js</code> file which is 101kB, but if you use HACS and reference the plugin with <code>/hacsfiles</code>, it will serve the 20kB <code>.gz</code> version automagically (sizes accurate for version 1.4.7 of CCH).</p>
+<h3>Open source</h3>
+<p>:::tip
+Every plugin you have downloaded with HACS will have an &quot;Open source&quot; option on the hamburger menu.
+This is useful when troubleshooting; if you can see a code wall (the underlying <code>.js</code> file) everything is OK, but if you get a 404 try downloading it again.
+:::</p>
