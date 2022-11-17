@@ -32,6 +32,16 @@ html {
     color: var(--primary-color);
     text-decoration: none;
   }
+
+  pre, code {
+    background-color: var(--secondary-background-color);
+  }
+
+  pre {
+    border-radius: 4px;
+    padding: 8px;
+  }
+
   
   .nav-title {
     color: var(--primary-text-color) !important;
@@ -40,6 +50,10 @@ html {
   .content {
     margin: 24px 0;
     display: flex;
+  }
+
+  .content > * {
+    width: 100%;
   }
   
   .container {
