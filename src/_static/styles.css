@@ -38,7 +38,8 @@ html {
   }
   
   .content {
-    margin: 32px 0;
+    margin: 24px 0;
+    display: flex;
   }
   
   .container {
@@ -47,9 +48,6 @@ html {
     max-width: 1200px;
   }
 
-  .sidebar {
-    display: flex;
-  }
   .sidebar-content {
     width: 282px;
     min-width: 282px;

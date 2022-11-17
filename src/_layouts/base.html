@@ -1,7 +1,7 @@
 ---
-title: ""
-description: ""
-section: ""
+title: ''
+description: ''
+section: ''
 navigation:
   - name: Users
     path: /users
@@ -11,8 +11,18 @@ navigation:
     path: /faq
   - name: Help
     path: /help
+footer:
+  - title: GitHub
+    url: "https://github.com/hacs"
+  - title: Twitter
+    url: "https://twitter.com/HACSIntegration"
+  - title: Discord
+    url: "https://discord.gg/apgchf8"
+  - title: Code of Conduct
+    url: "https://github.com/hacs/.github/blob/master/CODE_OF_CONDUCT.md"
+  - title: "Contact (no support!)"
+    url: "mailto:hi@hacs.xyz"
 ---
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,10 +40,7 @@ navigation:
       property="og:description"
       content="Summary of the collected Home Assistant usage statistics."
     />
-    <meta
-      property="og:image"
-      content="https://brands.home-assistant.io/hacs/icon.png"
-    />
+    <meta property="og:image" content="https://brands.home-assistant.io/hacs/icon.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@HACSIntegration" />
     <meta name="twitter:title" content="Home Assistant Community Store" />
@@ -41,17 +48,10 @@ navigation:
       name="twitter:description"
       content="Summary of the collected Home Assistant usage statistics."
     />
-    <meta
-      name="twitter:image"
-      content="https://brands.home-assistant.io/hacs/icon.png"
-    />
+    <meta name="twitter:image" content="https://brands.home-assistant.io/hacs/icon.png" />
     <meta name="viewport" content="width=device-width" />
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://brands.home-assistant.io/hacs/icon.png"
-    />
+    <link rel="icon" type="image/png" href="https://brands.home-assistant.io/hacs/icon.png" />
     <link href="/static/styles.css" rel="stylesheet" />
     {{extra_head_contents}}
   </head>
@@ -64,43 +64,31 @@ navigation:
           <li>
             <a
               class="{% if page.filePathStem contains nav.path %}active{% endif %}"
-              href="{% if nav.path != '/faq' %}{{ nav.path }}{% else %}{{ collections.faq.first.url }}{% endif %}"
-              >{{ nav.name }}</a
+              href="{{ nav.path }}"
             >
+              {{ nav.name }}
+            </a>
           </li>
           {% endfor %}
         </ul>
       </div>
     </div>
 
-    {% if no_sidebar %}
-    <div class="container content">{{ content }}</div>
-    {% else %}
-    {% assign section = page.filePathStem | split: "/" %}
-    {% assign sidebar_file = "sidebars/" | append: section[1] | append: ".html" %}
-    <div class="container content sidebar">
+    <div class="container content">
+      {% unless no_sidebar %}
+      {% assign section = page.filePathStem | split: "/" %}
+      {% assign sidebar_file = "sidebars/" | append: section[1] | append: ".html" %}
       <div class="sidebar-content">{% include sidebar_file %}</div>
+      {% endunless %}
       <div>{{ content }}</div>
     </div>
-    {% endif %}
 
     <div class="container">
       <div class="footer">
-        <a
-          title="GitHub"
-          href="https://github.com/hacs"
-          target="_blank"
-        >
-        GitHub
-        </a>
-        <span class="serperator">–</span>
-        <a
-          title="Twitter"
-          href="https://twitter.com/HACSIntegration"
-          target="_blank"
-        >
-        Twitter
-        </a>
+        {% for entry in footer %}
+          <a title="{{entry.title}}" href="{{entry.url}}" target="_blank">{{entry.title}}</a>
+          {% unless forloop.last %}<span class="serperator">–</span>{% endunless %}
+        {% endfor %}
       </div>
     </div>
   </body>
