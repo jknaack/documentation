@@ -1,13 +1,16 @@
 ---
 title: ""
 description: ""
+section: ""
 navigation:
   - name: Users
-    path: /
+    path: /users
   - name: Authors
-    path: /
+    path: /authors
+  - name: FAQ
+    path: /faq
   - name: Help
-    path: /
+    path: /help
 ---
 
 <!DOCTYPE html>
@@ -60,8 +63,8 @@ navigation:
           {% for nav in navigation %}
           <li>
             <a
-              class="{% if page.filePathStem == nav.matchPath or page.filePathStem == nav.path %}active{% endif %}"
-              href="{{ nav.path }}"
+              class="{% if page.filePathStem contains nav.path %}active{% endif %}"
+              href="{% if nav.path != '/faq' %}{{ nav.path }}{% else %}{{ collections.faq.first.url }}{% endif %}"
               >{{ nav.name }}</a
             >
           </li>
@@ -70,13 +73,22 @@ navigation:
       </div>
     </div>
 
+    {% if no_sidebar %}
     <div class="container content">{{ content }}</div>
+    {% else %}
+    {% assign section = page.filePathStem | split: "/" %}
+    {% assign sidebar_file = "sidebars/" | append: section[1] | append: ".html" %}
+    <div class="container content sidebar">
+      <div class="sidebar-content">{% include sidebar_file %}</div>
+      <div>{{ content }}</div>
+    </div>
+    {% endif %}
 
     <div class="container">
       <div class="footer">
         <a
           title="GitHub"
-          href="https://github.com/github"
+          href="https://github.com/hacs"
           target="_blank"
         >
         GitHub

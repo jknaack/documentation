@@ -46,6 +46,20 @@ html {
     padding: 16px 8px;
     max-width: 1200px;
   }
+
+  .sidebar {
+    display: flex;
+  }
+  .sidebar-content {
+    width: 282px;
+    min-width: 282px;
+    max-width: 282px;
+    margin-top: 16px;
+    margin-right: 32px;
+    padding-right: 32px;
+    border-right: 1px solid var(--divider-color);
+  }
+
   
   .footer {
     margin-top: 24px;
