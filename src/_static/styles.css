@@ -45,7 +45,12 @@ html {
     padding: 8px;
   }
 
-  
+  summary {
+    background-color: var(--secondary-background-color);
+    border-radius: 8px;
+    padding: 4px;
+  }
+
   .nav-title {
     color: var(--primary-text-color) !important;
   }
@@ -144,10 +149,10 @@ html {
     border-bottom-color: var(--primary-color);
   }
 
-  h1.nav-title.short_name {
+  h1.nav-title.short_name, .sidebar-content.mobile {
     display: none;
   }
-  h1.nav-title.full_name {
+  h1.nav-title.full_name,  .sidebar-content {
     display: block;
   }
   
@@ -189,6 +194,10 @@ html {
 
   
   @media screen and (max-width: 500px) {
+    html {
+      --sidebar-width: 100%;
+    }
+    
     .sidebar-content, .github-edit, .serperator,  h1.nav-title.full_name  {
       display: none;
     }
@@ -197,12 +206,20 @@ html {
       font-size: 0.8em;
     }
 
-    h1.nav-title.short_name {
+    h1.nav-title.short_name,  .sidebar-content.mobile {
       display: block;
+    }
+
+    .sidebar-content.mobile {
+      border: none;
     }
 
     .container {
       padding: 0 16px;
+    }
+
+    .content {
+      flex-direction: column;
     }
   
     .nav-bar {

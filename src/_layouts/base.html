@@ -60,6 +60,14 @@
             {%- endfor -%}
         </ul>
       </div>
+      <details class="sidebar-content mobile">
+        <summary>More {% if section[1] == "faq" %}FAQs{% elsif section[1] == "blog" %}blogs{% else %}documentation{% endif %}</summary>
+        <ul>
+          {%- for entry in collections[section[1]] -%}
+            <li class="{% if page.url == entry.url %}selected{% endif %}"><a class="{% if page.url == entry.url %}selected{% endif %}" href="{{ entry.url }}" title="{{ entry.data.title }}" >{{ entry.data.title }}</a></li>
+          {%- endfor -%}
+      </ul>
+    </details>
       {% endif %}
       <div>
         {{ content }}
