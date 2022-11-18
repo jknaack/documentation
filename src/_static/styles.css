@@ -188,6 +188,10 @@ html {
 
   
   @media screen and (max-width: 500px) {
+    .sidebar-content, .github-edit, .serperator,  h1.nav-title.full_name  {
+      display: none;
+    }
+    
     body {
       font-size: 0.8em;
     }
@@ -196,16 +200,8 @@ html {
       display: block;
     }
 
-    h1.nav-title.full_name {
-      display: none;
-    }
-  
     .container {
       padding: 0 16px;
-    }
-  
-    .serperator {
-      display: none;
     }
   
     .nav-bar {
@@ -236,10 +232,6 @@ html {
     .footer a {
       font-size: 1.2em;
       padding: 4px;
-    }
-
-    .sidebar-content {
-      display: none;
     }
   }
   
