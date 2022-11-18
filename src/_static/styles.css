@@ -15,7 +15,7 @@ html {
     html {
       --primary-text-color: #e1e1e1;
       --secondary-text-color: #9b9b9b;
-      --primary-background-color: #111111;
+      --primary-background-color: #242526;
       --secondary-background-color: #202020;
       --divider-color: rgba(225, 225, 225, 0.12);
     }
@@ -26,7 +26,8 @@ html {
     font-size: var(--primary-font-size);
     padding: 0;
     margin: 0;
-    line-height: 1.4;
+    line-height: 1.65;
+    font-weight: 400;
     background-color: var(--primary-background-color);
     color: var(--primary-text-color);
   }
