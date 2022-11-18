@@ -5,6 +5,8 @@ html {
     --secondary-background-color: #ffffff;
     --divider-color: rgba(0, 0, 0, 0.12);
     --primary-color: #41bdf5;
+    --primary-font-size: 1em;
+    --secondary-font-size: 0.8em;
   }
   
   
@@ -20,7 +22,7 @@ html {
   
   body {
     font-family: "Segoe UI", Roboto, sans-serif;
-    font-size: 1em;
+    font-size: var(--primary-font-size);
     padding: 0;
     margin: 0;
     line-height: 1.4;
@@ -126,6 +128,12 @@ html {
     font-style: italic;
     margin-top: 8px;
     margin-bottom: 32px;
+  }
+
+  .post-meta {
+    color: var(--secondary-text-color);
+    font-size: var(--secondary-font-size);
+    border-bottom: 1px solid var(--divider-color);
   }
   
   @media screen and (max-width: 500px) {

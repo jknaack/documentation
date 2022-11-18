@@ -1,0 +1,13 @@
+---
+layout: base
+tags: blog
+---
+<h1 class="nav-title">{{ title }}</h1>
+<div class="post-meta">
+  <span class="post-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+  <span class="post-author">
+    {% if author.name %}{{ author.name }}{% endif %}
+    {% if author.twitter %} <a title="Find {{ author.twitter }} on twitter.com" href="https://twitter.com/{{ author.twitter }}">@{{ author.twitter }}</a>{% endif %}
+</span>
+</div>
+{{ content }}
