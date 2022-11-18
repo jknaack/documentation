@@ -6,5 +6,3 @@ title: Add-ons?
 - HACS does not handle add-ons.
 
 Add-ons and HACS has nothing to do with each other, they are completely different.
-
-{{config.github_repository}}

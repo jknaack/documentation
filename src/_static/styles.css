@@ -178,12 +178,13 @@ html {
     padding: 8px 12px;
     border-radius: 8px;
     align-items: center;
+    font-size: var(--secondary-font-size);
   }
 
   .github-edit svg {
     margin-right: 8px;
     fill: var(--secondary-text-color);
-    height: 28px;
+    height: 24px;
   }
 
   
@@ -191,7 +192,7 @@ html {
     .sidebar-content, .github-edit, .serperator,  h1.nav-title.full_name  {
       display: none;
     }
-    
+
     body {
       font-size: 0.8em;
     }
