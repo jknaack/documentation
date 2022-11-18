@@ -7,6 +7,7 @@ html {
     --primary-color: #41bdf5;
     --primary-font-size: 1em;
     --secondary-font-size: 0.8em;
+    --sidebar-width: 254px;
   }
   
   
@@ -65,15 +66,35 @@ html {
   }
 
   .sidebar-content {
-    width: 282px;
-    min-width: 282px;
-    max-width: 282px;
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);;
+    max-width: var(--sidebar-width);;
     margin-top: 16px;
     margin-right: 32px;
     padding-right: 32px;
     border-right: 1px solid var(--divider-color);
   }
 
+  .sidebar-content a {
+    color: var(--secondary-text-color) !important;
+  }
+  .sidebar-content a.selected {
+    color: var(--primary-color) !important;
+  }
+
+  .sidebar-content li {
+    padding: 2px 6px;
+  }
+
+  .sidebar-content li.selected {
+    background-color: var(--secondary-background-color);
+    border-radius: 8px;
+  }
+
+  .sidebar-content ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+  }
   
   .footer {
     margin-top: 24px;
