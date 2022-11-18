@@ -195,7 +195,7 @@ html {
   
   @media screen and (max-width: 500px) {
     html {
-      --sidebar-width: 100%;
+      --sidebar-width: unset;
     }
     
     .sidebar-content, .github-edit, .serperator,  h1.nav-title.full_name  {
@@ -211,7 +211,17 @@ html {
     }
 
     .sidebar-content.mobile {
+      padding: 0;
+      margin: 0;
       border: none;
+    }
+
+    .sidebar-content.mobile ul {
+      padding: 0 16px;
+    }
+
+    .sidebar-content.mobile[open] {
+      border-bottom: 1px solid var(--divider-color);
     }
 
     .container {
