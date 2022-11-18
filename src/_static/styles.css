@@ -168,6 +168,24 @@ html {
     fill: var(--secondary-text-color);
     height: var(--secondary-font-size);
   }
+
+  .github-edit {
+    float: right;
+    margin-top: 32px;
+    display: flex;
+    background: var(--secondary-background-color);
+    color: var(--secondary-text-color) !important;
+    padding: 8px 12px;
+    border-radius: 8px;
+    align-items: center;
+  }
+
+  .github-edit svg {
+    margin-right: 8px;
+    fill: var(--secondary-text-color);
+    height: 28px;
+  }
+
   
   @media screen and (max-width: 500px) {
     body {

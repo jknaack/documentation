@@ -2,7 +2,7 @@ site_name: "Home Assistant Community Store"
 site_short_name: "HACS"
 site_favicon_location: "https://brands.home-assistant.io/hacs/icon.png"
 
-github_branch: "main"
+github_branch: "experimental"
 github_repository: "hacs/documentation"
 
 twitter_username: "@HACSIntegration"
