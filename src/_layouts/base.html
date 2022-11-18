@@ -1,72 +1,48 @@
 ---
-title: ''
-description: ''
-section: ''
-navigation:
-  - name: Users
-    path: /users
-  - name: Authors
-    path: /authors
-  - name: FAQ
-    path: /faq
-  - name: Help
-    path: /help
-footer:
-  - title: GitHub
-    url: "https://github.com/hacs"
-  - title: Twitter
-    url: "https://twitter.com/HACSIntegration"
-  - title: Discord
-    url: "https://discord.gg/apgchf8"
-  - title: Code of Conduct
-    url: "https://github.com/hacs/.github/blob/master/CODE_OF_CONDUCT.md"
-  - title: "Contact (no support!)"
-    url: "mailto:hi@hacs.xyz"
 ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% if title != "" %}{{title}} | {% endif %}Home Assistant Community Store</title>
+    <title>{% if title != "" %}{{title}} | {% endif %}{{config.site_name}}</title>
     <meta
       property="og:title"
-      content="{% if title %}{{title}} | {% endif %}Home Assistant Community Store"
+      content="{% if title %}{{title}} | {% endif %}{{config.site_name}}"
     />
-    <meta property="og:site_name" content="Home Assistant Community Store" />
-    <meta property="og:url" content="https://haxs.xyz/" />
+    <meta property="og:site_name" content="{{config.site_name}}" />
+    <meta property="og:url" content="{{config.site_url}}" />
     <meta property="og:type" content="website" />
     <meta
       property="og:description"
-      content="Summary of the collected Home Assistant usage statistics."
+      content="{{config.site_short_name}} documentation."
     />
-    <meta property="og:image" content="https://brands.home-assistant.io/hacs/icon.png" />
+    <meta property="og:image" content="{{config.site_favicon_location}}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@HACSIntegration" />
-    <meta name="twitter:title" content="Home Assistant Community Store" />
+    <meta name="twitter:site" content="{{config.twitter_username}}" />
+    <meta name="twitter:title" content="{{config.site_name}}" />
     <meta
       name="twitter:description"
-      content="Summary of the collected Home Assistant usage statistics."
+      content="{{config.site_short_name}} documentation."
     />
-    <meta name="twitter:image" content="https://brands.home-assistant.io/hacs/icon.png" />
+    <meta name="twitter:image" content="{{config.site_favicon_location}}" />
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="icon" type="image/png" href="https://brands.home-assistant.io/hacs/icon.png" />
+    <link rel="icon" type="image/png" href="{{config.site_favicon_location}}" />
     <link href="/static/styles.css" rel="stylesheet" />
-    {{extra_head_contents}}
   </head>
   <body>
     <div class="container">
       <div class="nav-bar">
-        <a href="/"><h1 class="nav-title">HACS</h1></a>
+        <a href="/"><h1 class="nav-title">{{config.site_short_name}}</h1></a>
         <ul>
-          {% for nav in navigation %}
+          {% for entry in config.navigation %}
           <li>
             <a
-              class="{% if page.filePathStem contains nav.path %}active{% endif %}"
-              href="{{ nav.path }}"
+              class="{% if page.filePathStem contains entry.path %}active{% endif %}"
+              href="{{ entry.path }}"
             >
-              {{ nav.name }}
+              {{ entry.name }}
             </a>
           </li>
           {% endfor %}
@@ -85,7 +61,7 @@ footer:
 
     <div class="container">
       <div class="footer">
-        {% for entry in footer %}
+        {% for entry in config.footer %}
           <a title="{{entry.title}}" href="{{entry.url}}" target="_blank">{{entry.title}}</a>
           {% unless forloop.last %}<span class="serperator">–</span>{% endunless %}
         {% endfor %}

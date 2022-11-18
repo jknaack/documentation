@@ -134,7 +134,7 @@ html {
     }
   
     .container {
-      padding: 0 8px;
+      padding: 0 16px;
     }
   
     .serperator {
@@ -143,6 +143,8 @@ html {
   
     .nav-bar {
       flex-direction: column;
+      padding: 0 16px;
+      font-size: 1.2em;
     }
   
     .nav-bar > * {
@@ -158,6 +160,19 @@ html {
     }
     .nav-bar ul li {
       padding-top: 8px;
+    }
+    .footer {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .footer a {
+      font-size: 1.2em;
+      padding: 4px;
+    }
+
+    .sidebar-content {
+      display: none;
     }
   }
   

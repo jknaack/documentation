@@ -1,0 +1,32 @@
+site_url: "https://hacs.xyz"
+site_name: "Home Assistant Community Store"
+site_short_name: "HACS"
+site_favicon_location: "https://brands.home-assistant.io/hacs/icon.png"
+
+
+github_branch: "main"
+github_repository: "hacs/documentation"
+
+twitter_username: "@HACSIntegration"
+
+navigation:
+  - name: Users
+    path: /users
+  - name: Authors
+    path: /authors
+  - name: FAQ
+    path: /faq
+  - name: Help
+    path: /help
+
+footer:
+  - title: GitHub
+    url: "https://github.com/hacs"
+  - title: Twitter
+    url: "https://twitter.com/HACSIntegration"
+  - title: Discord
+    url: "https://discord.gg/apgchf8"
+  - title: Code of Conduct
+    url: "https://github.com/hacs/.github/blob/master/CODE_OF_CONDUCT.md"
+  - title: "Contact (no support!)"
+    url: "mailto:hi@hacs.xyz"
