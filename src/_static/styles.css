@@ -122,6 +122,13 @@ html {
   .nav-bar a.active {
     border-bottom-color: var(--primary-color);
   }
+
+  h1.nav-title.short_name {
+    display: none;
+  }
+  h1.nav-title.full_name {
+    display: block;
+  }
   
   .note {
     color: var(--secondary-text-color);
@@ -135,10 +142,23 @@ html {
     font-size: var(--secondary-font-size);
     border-bottom: 1px solid var(--divider-color);
   }
+
+  .post-meta svg {
+    fill: var(--secondary-text-color);
+    height: var(--secondary-font-size);
+  }
   
   @media screen and (max-width: 500px) {
     body {
       font-size: 0.8em;
+    }
+
+    h1.nav-title.short_name {
+      display: block;
+    }
+
+    h1.nav-title.full_name {
+      display: none;
     }
   
     .container {

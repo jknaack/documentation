@@ -1,5 +1,6 @@
 ---
 ---
+{% assign section = page.filePathStem | split: "/" %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,7 +35,7 @@
   <body>
     <div class="container">
       <div class="nav-bar">
-        <a href="/"><h1 class="nav-title">{{config.site_short_name}}</h1></a>
+        <a href="/"><h1 class="nav-title full_name">{{config.site_name}}</h1><h1 class="nav-title short_name">{{config.site_short_name}}</h1></a>
         <ul>
           {% for entry in config.navigation %}
           <li>
@@ -51,11 +52,15 @@
     </div>
 
     <div class="container content">
-      {% unless no_sidebar %}
-      {% assign section = page.filePathStem | split: "/" %}
-      {% assign sidebar_file = "sidebars/" | append: section[1] | append: ".html" %}
-      <div class="sidebar-content">{% include sidebar_file %}</div>
-      {% endunless %}
+      {% if section and collections[section[1]] %}
+        <div class="sidebar-content">
+          <ul>
+            {%- for entry in collections[section[1]] -%}
+              <li><a href="{{ entry.url }}" title="{{ entry.data.title }}" >{{ entry.data.title }}</a></li>
+            {%- endfor -%}
+        </ul>
+      </div>
+      {% endif %}
       <div>{{ content }}</div>
     </div>
 

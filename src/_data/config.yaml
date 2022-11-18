@@ -11,8 +11,8 @@ twitter_username: "@HACSIntegration"
 navigation:
   - name: Users
     path: /users
-  - name: Authors
-    path: /authors
+  - name: Publishers
+    path: /publishers
   - name: Blog
     path: /blog
   - name: FAQ

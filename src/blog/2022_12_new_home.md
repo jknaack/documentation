@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: Dummy entry
+title: New home
 author:
     name: "Joakim Sørensen"
     twitter: "ludeeus"
