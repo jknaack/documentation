@@ -68,7 +68,7 @@
       <div class="footer">
         {% for entry in config.footer %}
           <a title="{{entry.title}}" href="{{entry.url}}" target="_blank">{{entry.title}}</a>
-          {% unless forloop.last %}<span class="serperator">–</span>{% endunless %}
+          {% unless forloop.last %}<span class="serperator">&#x2022;</span>{% endunless %}
         {% endfor %}
       </div>
     </div>
