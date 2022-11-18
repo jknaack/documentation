@@ -11,5 +11,6 @@ Experimental features will (generally) **not** be documented, and will be change
 
 To enable experimental features, fir go to your [Integration panel](https://my.home-assistant.io/redirect/integrations/)
 
-1. Click "options" on the HACS card.
+1. Click "CONFIGURE" on the HACS card.
 2. Add a checkmark in the "Enable experimental features" checkbox.
+3. Click "SUBMIT".
