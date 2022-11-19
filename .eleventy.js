@@ -14,7 +14,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension('yaml', (contents) => ({
     ...yaml.load(contents),
     site_url: !process.env.CF_PAGES_BRANCH
-      ? 'http://localhost:8080/'
+      ? 'http://localhost:8080'
       : process.env.CF_PAGES_BRANCH === 'main' || !process.env.CF_PAGES_URL
       ? FALLBACK_BASE_URL
       : process.env.CF_PAGES_URL,
