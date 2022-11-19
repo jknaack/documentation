@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy(
     { 
       'src/_static': 'static', 
+      'src/images': 'images',
       '_redirects': '_redirects',
     }
   )
