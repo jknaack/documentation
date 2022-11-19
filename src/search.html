@@ -11,7 +11,7 @@ eleventyExcludeFromCollections: true
     const allPages = {{collections.all | simplifyCollection}};
 
     handleSearch = () => {
-        const search = document.querySelector("#search-input").value || "github";
+        const search = document.querySelector("#search-input").value?.toLowerCase();
         if (!search || search.length < 2) {
             return
         }
