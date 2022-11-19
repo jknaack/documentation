@@ -16,7 +16,7 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:description"
-      content="{% if description and description != '' %}{{description}}{% else %}{{content | stripHtml | getFirstN: 300}}{% endif %}"
+      content="{% if description and description != '' %}{{description}}{% else %}{{content | stripHtml | getFirstN: 299}}{% endif %}"
     />
     <meta property="og:image" content="{{config.site_url}}{% if social_image and social_image != '' %}/images/{{social_image}}{% else %}/images/hacs-social.png{% endif %}" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -24,7 +24,7 @@
     <meta name="twitter:title" content="{% if title and title != '' %}{{title}} | {% endif %}{{config.site_name}}" />
     <meta
       name="twitter:description"
-      content="{% if description and description != '' %}{{description}}{% else %}{{content | stripHtml | getFirstN: 200}}{% endif %}"
+      content="{% if description and description != '' %}{{description}}{% else %}{{content | stripHtml | getFirstN: 199}}{% endif %}"
     />
     <meta name="twitter:image" content="{{config.site_url}}{% if social_image and social_image != '' %}/images/{{social_image}}{% else %}/images/hacs-social.png{% endif %}" />
     <meta name="viewport" content="width=device-width" />
