@@ -34,8 +34,13 @@
   </head>
   <body>
     <div class="container">
+      <div class="nav-bar-mobile">
+        <svg onclick="openMobileNav()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+        <a href="/"><h1 class="nav-title">{{config.site_short_name}}</h1></a>
+      </div>
+      {% include "mobile-navigation-overlay.html" %}
       <div class="nav-bar">
-        <a href="/"><h1 class="nav-title full_name">{{config.site_name}}</h1><h1 class="nav-title short_name">{{config.site_short_name}}</h1></a>
+        <a href="/"><h1 class="nav-title full_name">{{config.site_name}}</h1></a>
         <ul>
           {% for entry in config.navigation %}
           <li>
@@ -66,8 +71,8 @@
           {%- for entry in collections[section[1]] -%}
             <li class="{% if page.url == entry.url %}selected{% endif %}"><a class="{% if page.url == entry.url %}selected{% endif %}" href="{{ entry.url }}" title="{{ entry.data.title }}" >{{ entry.data.title }}</a></li>
           {%- endfor -%}
-      </ul>
-    </details>
+        </ul>
+      </details>
       {% endif %}
       <div class="main-content">
         {{ content }}
@@ -88,5 +93,6 @@
         {% endfor %}
       </div>
     </div>
+    <script src="/static/openMobileNav.js"></script>
   </body>
 </html>

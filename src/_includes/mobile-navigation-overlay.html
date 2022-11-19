@@ -1,0 +1,21 @@
+<div class="mobile-navigation-overlay">
+    <ul>
+        {% for nav in config.navigation %}
+            <li class="{% if page.filePathStem contains nav.path %}selected{% endif %}">
+            <a
+                class="{% if page.filePathStem contains nav.path %}selected{% endif %}"
+                href="{{ nav.path }}"
+            >
+                {{ nav.name }}
+            </a>
+            </li>
+            {% if section and nav.path contains section[1] and collections[section[1]] %}
+                <ul class="sub-navigation">
+                {%- for entry in collections[section[1]] -%}
+                    <li class="{% if page.url == entry.url %}selected{% endif %}"><a class="{% if page.url == entry.url %}selected{% endif %}" href="{{ entry.url }}" title="{{ entry.data.title }}" >{{ entry.data.title }}</a></li>
+                {%- endfor -%}
+                </ul>
+            {% endif %}
+            {% endfor %}
+      </ul>
+</div>
