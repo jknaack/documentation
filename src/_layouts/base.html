@@ -24,7 +24,7 @@
     <meta name="twitter:title" content="{% if title and title != '' %}{{title}} | {% endif %}{{config.site_name}}" />
     <meta
       name="twitter:description"
-      content="{% if description and description != '' %}{{description}}{% else %}{{content | stripHtml | getFirstN: 300}}{% endif %}"
+      content="{% if description and description != '' %}{{description}}{% else %}{{content | stripHtml | getFirstN: 200}}{% endif %}"
     />
     <meta name="twitter:image" content="{% if social_image and social_image != '' %}{{social_image}}{% else %}/images/hacs-social.png{% endif %}" />
     <meta name="viewport" content="width=device-width" />
