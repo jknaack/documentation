@@ -230,6 +230,10 @@ html {
     height: 24px;
   }
 
+  .github-edit span {
+    margin-top: 0.15em;
+  }
+
   .github-edit:hover {
     border: 1px solid var(--divider-color);
     color: var(--primary-text-color) !important;
