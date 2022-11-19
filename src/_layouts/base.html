@@ -69,7 +69,7 @@
       </ul>
     </details>
       {% endif %}
-      <div>
+      <div class="main-content">
         {{ content }}
         {% unless hide_github %}
           <a class="github-edit" title="Edit this page on GitHub" href="https://github.com/{{config.github_repository}}/edit/{{config.github_branch}}{{page.inputPath | remove_first: '.'}}" target="_blank">
