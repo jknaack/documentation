@@ -1,4 +1,5 @@
 site_name: "Home Assistant Community Store"
+site_description: "HACS Documentation"
 site_short_name: "HACS"
 site_favicon_location: "https://brands.home-assistant.io/hacs/icon.png"
 
