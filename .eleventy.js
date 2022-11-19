@@ -3,8 +3,12 @@ const yaml = require('js-yaml')
 const FALLBACK_BASE_URL = 'https://hacs.xyz'
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy({ 'src/_static': 'static' })
-  eleventyConfig.addPassthroughCopy({ '_redirects': '_redirects' })
+  eleventyConfig.addPassthroughCopy(
+    { 
+      'src/_static': 'static', 
+      '_redirects': '_redirects',
+    }
+  )
 
   eleventyConfig.addDataExtension('yaml', (contents) => ({
     ...yaml.load(contents),
