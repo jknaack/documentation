@@ -4,17 +4,17 @@
 	"context": "..",
 	"postStartCommand": "yarn",
 	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash",
 		"editor.defaultFormatter": "esbenp.prettier-vscode",
 		"editor.formatOnSave": false,
 		"[javascript]": {
 		  "editor.defaultFormatter": "esbenp.prettier-vscode",
-		  "editor.formatOnSave": false,
+		  "editor.formatOnSave": false
 		  
 	}
 	},
 	"appPort": ["3000:3000"],
 	"postCreateCommand": "yarn",
+	"remoteUser": "node",
 	"extensions": [
 		"dbaeumer.vscode-eslint"
 	]
