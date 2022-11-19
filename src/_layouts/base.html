@@ -35,7 +35,7 @@
   <body>
     <div class="container">
       <div class="nav-bar-mobile">
-        <svg onclick="openMobileNav()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+        <svg id="nav-bar-mobile-icon" onclick="manageMobileNavigationOverlay()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
         <a href="/"><h1 class="nav-title">{{config.site_short_name}}</h1></a>
       </div>
       {% include "mobile-navigation-overlay.html" %}
@@ -85,6 +85,6 @@
         {% endfor %}
       </div>
     </div>
-    <script src="/static/openMobileNav.js"></script>
+    <script src="/static/manageMobileNavigationOverlay.js"></script>
   </body>
 </html>

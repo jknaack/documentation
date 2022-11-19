@@ -279,13 +279,18 @@ html {
 
     .nav-bar-mobile {
       margin-top: 12px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
     }
 
     .nav-bar-mobile svg {
-      height: 32px;
-      margin-right: 8px;
+      height: 24px;
+      margin-right: 12px;
+      background-color: var(--secondary-background-color);
+      border: 2px solid var(--divider-color);
+      border-radius: 4px;
+      padding: 8px;
     }
   }
   
