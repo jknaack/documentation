@@ -1,6 +1,6 @@
 ---
 layout: base
-no_sidebar: true
+eleventyExcludeFromCollections: true
 ---
 
 ```bash

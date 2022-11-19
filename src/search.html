@@ -1,0 +1,27 @@
+---
+layout: base
+eleventyExcludeFromCollections: true
+---
+
+<input id="search-input" type="text" placeholder="Search..." autofocus onkeyup="handleSearch()" />
+<div id="search-result"></div>
+
+<script>
+    const searchResult = document.querySelector("#search-result")
+    const allPages = {{collections.all | simplifyCollection}};
+
+    handleSearch = () => {
+        const search = document.querySelector("#search-input").value || "github";
+        if (!search || search.length < 2) {
+            return
+        }
+        searchResult.innerHTML = ""
+        for (const hit of allPages.filter(entry => entry.title?.toLowerCase().includes(search) || entry.tags?.toLowerCase().includes(search) || entry.templateContent?.toLowerCase().includes(search))) {
+            const hitDiv = document.createElement('div');
+            hitDiv.innerHTML = `<div class="search-result-entry"><a class="search-result-entry-title" href="${hit.url}">${hit.title || hit.url}</a><span>${hit.templateContent}</span></div>`
+            searchResult.appendChild(hitDiv)
+        }
+    }
+
+
+</script>

@@ -51,7 +51,11 @@
               class="{% if page.filePathStem contains entry.path %}active{% endif %}"
               href="{{ entry.path }}"
             >
+            {% if entry.icon %}
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="{{ entry.icon }}" /></svg>
+            {% else %}
               {{ entry.name }}
+            {% endif %}
             </a>
           </li>
           {% endfor %}

@@ -20,11 +20,23 @@ module.exports = function (eleventyConfig) {
       : process.env.CF_PAGES_URL,
   }))
 
+  eleventyConfig.addFilter("debug", (value) => console.dir(value))
+
   eleventyConfig.addFilter("stripHtml", (value) => String(value.replace(/"/g, "'").replace(/<[^>]*>/g, " ")));
   eleventyConfig.addFilter("getFirstN", (value, target) => String(value).substring(0, target || value.length));
 
   eleventyConfig.addFilter("sortCollectionByOrder", (collection) => collection.sort((a, b) =>  (a.data.order || 99) - (b.data.order || 99)));
   eleventyConfig.addFilter("sortCollectionByTitle", (collection) => collection.sort((a, b) => (a.data.title || "").localeCompare(b.data.title || "")));
+
+  eleventyConfig.addFilter("simplifyCollection", (value) => JSON.stringify(value.map(entry => (
+    {
+      title: entry.data.title, 
+      url: entry.url, 
+      templateContent: entry.templateContent.length > 250 ? `${entry.templateContent.substring(0, 250)}...` :  entry.templateContent, 
+      tags: entry.tags
+    }
+    ))))
+  
 
   return {
     dir: {
