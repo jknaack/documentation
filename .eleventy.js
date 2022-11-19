@@ -4,6 +4,7 @@ const FALLBACK_BASE_URL = 'https://hacs.xyz'
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/_static': 'static' })
+  eleventyConfig.addPassthroughCopy({ '_redirects': '_redirects' })
   eleventyConfig.addDataExtension('yaml', (contents) => ({
     ...yaml.load(contents),
     site_url: !process.env.CF_PAGES_BRANCH
