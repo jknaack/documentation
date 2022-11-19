@@ -99,6 +99,9 @@ html {
   .sidebar-content a.selected {
     color: var(--primary-color) !important;
   }
+  .sidebar-content a:hover {
+    color: var(--primary-text-color) !important;
+  }
 
   .sidebar-content li {
     padding: 4px 8px;
@@ -161,6 +164,9 @@ html {
   .nav-bar a.active {
     border-bottom-color: var(--primary-color);
   }
+  .nav-bar a:hover {
+    color: var(--primary-text-color);
+  }
 
   h1.nav-title.short_name, .sidebar-content.mobile {
     display: none;
@@ -197,6 +203,7 @@ html {
     border-radius: 8px;
     align-items: center;
     font-size: var(--secondary-font-size);
+    border: 1px solid var(--secondary-background-color);
   }
 
   .github-edit svg {
@@ -205,6 +212,14 @@ html {
     height: 24px;
   }
 
+  .github-edit:hover {
+    border: 1px solid var(--divider-color);
+    color: var(--primary-text-color) !important;
+  }
+
+  .github-edit:hover svg {
+    fill: var(--primary-text-color);
+  }
   
   @media screen and (max-width: 500px) {
     html {
