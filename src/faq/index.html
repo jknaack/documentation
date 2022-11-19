@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
-    <meta http-equiv="refresh" content="0;url={{ collections.faq.first.url }}" />
+    {% assign firstEntry = collections.faq | sortCollectionByTitle | sortCollectionByOrder | first %}
+    <meta http-equiv="refresh" content="0;url={{ firstEntry.url  }}" />
     <link href="/static/styles.css" rel="stylesheet" />
 </head>
 <body>

@@ -23,6 +23,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("stripHtml", (value) => String(value.replace(/"/g, "'").replace(/<[^>]*>/g, " ")));
   eleventyConfig.addFilter("getFirstN", (value, target) => String(value).substring(0, target || value.length));
 
+  eleventyConfig.addFilter("sortCollectionByOrder", (collection) => collection.sort((a, b) =>  (a.data.order || 99) - (b.data.order || 99)));
+  eleventyConfig.addFilter("sortCollectionByTitle", (collection) => collection.sort((a, b) => (a.data.title || "").localeCompare(b.data.title || "")));
+
   return {
     dir: {
       input: 'src',
