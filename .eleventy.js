@@ -33,7 +33,7 @@ module.exports = function (eleventyConfig) {
       title: entry.data.title, 
       url: entry.url, 
       templateContent: entry.templateContent.length > 250 ? `${entry.templateContent.substring(0, 250)}...` :  entry.templateContent, 
-      tags: entry.tags
+      tags: entry.data.tags
     }
     ))))
 

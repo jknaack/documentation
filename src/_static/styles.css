@@ -239,6 +239,9 @@ html {
   .search-result-entry .search-result-entry-title {
     font-size: 1.4em;
   }
+  .search-result-entry-title {
+    text-transform: capitalize;
+  }
   .search-result-entry span {
     font-size: var(--secondary-font-size);
     color: var(--secondary-text-color) !important;

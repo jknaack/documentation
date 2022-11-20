@@ -17,9 +17,15 @@ eleventyExcludeFromCollections: true
             return
         }
         searchResult.innerHTML = ""
-        for (const hit of allPages.filter(entry => entry.title?.toLowerCase().includes(search) || entry.tags?.toLowerCase().includes(search) || entry.templateContent?.toLowerCase().includes(search))) {
+        const filtered = allPages.filter(entry => entry.title?.toLowerCase().includes(search) || entry.tags?.toString().toLowerCase().includes(search) || entry.templateContent?.toLowerCase().includes(search))
+        if (!filtered.length) {
+            searchResult.innerHTML = `<i>No matches for ${search}...</i>`
+            return;
+        }
+        for (const hit of filtered) {
+            console.log(hit)
             const hitDiv = document.createElement('div');
-            hitDiv.innerHTML = `<div class="search-result-entry"><a class="search-result-entry-title" href="${hit.url}">${hit.title || hit.url}</a><span>${hit.templateContent}</span></div>`
+            hitDiv.innerHTML = `<div class="search-result-entry"><a class="search-result-entry-title" href="${hit.url}">${hit.tags ? `${hit.tags} -> ` : ""}${hit.title || hit.url}</a><span>${hit.templateContent}</span></div>`
             searchResult.appendChild(hitDiv)
         }
     }
