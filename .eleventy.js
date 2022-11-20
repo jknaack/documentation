@@ -36,7 +36,6 @@ module.exports = function (eleventyConfig) {
       tags: entry.tags
     }
     ))))
-  
 
   return {
     dir: {

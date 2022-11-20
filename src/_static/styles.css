@@ -217,37 +217,6 @@ html {
     height: var(--secondary-font-size);
   }
 
-  .github-edit {
-    float: right;
-    margin-top: 32px;
-    display: flex;
-    background: var(--secondary-background-color);
-    color: var(--secondary-text-color) !important;
-    padding: 8px 12px;
-    border-radius: 8px;
-    align-items: center;
-    font-size: var(--secondary-font-size);
-    border: 1px solid var(--secondary-background-color);
-  }
-
-  .github-edit svg {
-    margin-right: 8px;
-    height: 24px;
-  }
-
-  .github-edit span {
-    margin-top: 0.15em;
-  }
-
-  .github-edit:hover {
-    border: 1px solid var(--divider-color);
-    color: var(--primary-text-color) !important;
-  }
-
-  .github-edit:hover svg {
-    fill: var(--primary-text-color);
-  }
-
   #search-input {
     background-color: var(--secondary-background-color);
     border: none;
@@ -284,7 +253,7 @@ html {
       --sidebar-width: unset;
     }
     
-    .sidebar-content, .github-edit, .serperator, .nav-bar  {
+    .sidebar-content, .serperator, .nav-bar  {
       display: none;
     }
 

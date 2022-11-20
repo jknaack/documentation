@@ -8,6 +8,7 @@ eleventyExcludeFromCollections: true
 
 <script>
     const searchResult = document.querySelector("#search-result")
+    
     const allPages = {{collections.all | simplifyCollection}};
 
     handleSearch = () => {
@@ -22,6 +23,4 @@ eleventyExcludeFromCollections: true
             searchResult.appendChild(hitDiv)
         }
     }
-
-
 </script>
