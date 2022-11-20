@@ -2,10 +2,10 @@
 layout: base
 eleventyExcludeFromCollections: true
 ---
-
-<img src="/images/hacs-hero.png">
-
 <style>
+    img[src="/images/hacs-hero.png"] {
+        border-radius: 4px;
+    }
     .sections {
         gap: 16px;
         display: grid;
@@ -16,8 +16,8 @@ eleventyExcludeFromCollections: true
     .section {
         background-color: var(--secondary-background-color);
         display: block;
-        padding: 8px;
-        border-radius: 8px;
+        padding: 0 32px 12px;
+        border-radius: 4px;
         border: 1px solid var(--divider-color);
     }
 
@@ -27,6 +27,8 @@ eleventyExcludeFromCollections: true
     }
   }
 </style>
+
+<img src="/images/hacs-hero.png">
 <div class="sections">
     <div class="section">
         <h2>For users</h2>
