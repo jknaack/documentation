@@ -1,5 +1,5 @@
 ---
-layout: faq
+layout: users
 title: Experimental features
 ---
 HACS does not do beta releases (anymore). Instead, we have experimental features.

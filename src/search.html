@@ -9,7 +9,7 @@ eleventyExcludeFromCollections: true
 <script>
     const searchResult = document.querySelector("#search-result")
     
-    const allPages = {{collections.all | simplifyCollection}};
+    const allPages = {{collections.all | sortCollectionByOrder | sortCollectionByTitle | simplifyCollection}};
 
     handleSearch = () => {
         const search = document.querySelector("#search-input").value?.toLowerCase();

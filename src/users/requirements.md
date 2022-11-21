@@ -1,6 +1,7 @@
 ---
 layout: users
 title: Requirements
+order: 1
 ---
 
 Before you start using HACS, you need to make sure you have the following requirements met:
