@@ -58,6 +58,10 @@ html {
     padding: 8px;
   }
 
+  code {
+    word-break: break-word;
+  }
+
   summary {
     background-color: var(--secondary-background-color);
     border-radius: 8px;
