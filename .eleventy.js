@@ -1,8 +1,20 @@
 const yaml = require('js-yaml')
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
+// If not already added from previous tip
+const slugify = require("slugify");
 
 const FALLBACK_BASE_URL = 'https://hacs.xyz'
 
+;
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.setLibrary("md", markdownIt({
+    html: true,
+  }).use(markdownItAnchor, {
+    permalink: markdownItAnchor.permalink.headerLink({ level: [1, 2, 3], tabIndex: false, })
+  }));
+
   eleventyConfig.addPassthroughCopy(
     { 
       'src/_static': 'static', 
