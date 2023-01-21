@@ -39,7 +39,7 @@ During startup, HACS will reach out to [HACS Data](#hacs-data) for all the categ
 
 If you have any custom repositories added to HACS, these will use the [GitHub REST API](https://docs.github.com/en/rest) during startup.
 
-### Every 8 hours after startup
+### Every 6 hours after startup
 
 HACS will reach out to [HACS Data](#hacs-data) for all the categories you have enabled, it will also get newly removed repositories.
 
