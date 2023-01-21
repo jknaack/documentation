@@ -19,7 +19,9 @@ Examples:
 - <https://data-v2.hacs.xyz/integration/data.json>
 - <https://data-v2.hacs.xyz/integration/repositories.json>
 
-The `data` `<type>` contains data generated from the repositories defined for that `<section>` in the 
+The `data` `<type>` contains a dictionary data generated from the repositories defined for that `<section>` in the 
+
+The `repositories` `<type>` contains a list of the repositories defined for that `<section>` in the 
 
 These URLs serve data stored in [Cloudflare R2 buckets](https://developers.cloudflare.com/r2/). Those files are updated with three different [GitHub actions](https://github.com/features/actions):
 - [hacs/integration - Generate HACS data](https://github.com/hacs/integration/blob/main/.github/workflows/generate-hacs-data.yml)
