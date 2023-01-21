@@ -13,8 +13,6 @@ navigation:
     path: /users
   - name: Publishers
     path: /publishers
-  - name: Blog
-    path: /blog
   - name: FAQ
     path: /faq
   - name: Help
