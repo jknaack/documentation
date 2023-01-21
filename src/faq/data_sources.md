@@ -41,6 +41,10 @@ If you have any custom repositories added to HACS, these will use the [GitHub RE
 
 HACS will reach out to [HACS Data](#hacs-data) for all the categories you have enabled, it will also get newly removed repositories.
 
+If any of your downloaded repositories have an update, their [update entity](/user/update_entites) will now show an update.
+
+If any of your downloaded repositories have been removed as default in HACS, you will be presented with a [repair issue](https://www.home-assistant.io/integrations/repairs/) stating why it was removed.
+
 ### Every 48 hours after startup
 
 Suppose HACS has yet to fetch the contents of <https://data-v2.hacs.xyz/integration/data.json> at least once successfully. In that case, it will use the [GitHub REST API](https://docs.github.com/en/rest) to refresh information about hacs/integration. If it has fetched one or more successfully, this action is skipped.
