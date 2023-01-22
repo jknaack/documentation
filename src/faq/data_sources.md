@@ -61,7 +61,7 @@ When you browse a repository inside HACS, HACS will use the [GitHub REST API](ht
 
 When you click the "Update information" action on the "..." repository menu, HACS will use the [GitHub REST API](https://docs.github.com/en/rest) to ensure that the information it acts on is up-to-date.
 
-## Update repository
+### Update a downloaded repository
 
 When you update a downloaded repository with the "Update" button in the more info dialog of its [update entities](/user/update_entites) or the `update.install` service, HACS will use the [GitHub REST API](https://docs.github.com/en/rest) to ensure that the information it acts on is up-to-date.
 
